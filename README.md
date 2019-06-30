@@ -115,11 +115,11 @@ The most important part of the problem is how we fill the stack and the queue, s
 * Job has no dependency : Add to the queue
 
 - Job has dependency :
-  -- Dependency exist in the queue : Add job to the queue.
-  -- Job and dependency doesn't exist in the stack : Add job to the stack and after that add dependency to the stack.
-  -- Job doesn't exist in the stack but dependency exist in the stack : Add job before the dependency in the stack.
-  -- Job exist in the stack and dependency doesn't : Add dependency to the stack
-  -- Job and dependency doesn't exist in the stack : Add job to the stack and after that add dependency to the stack.
+  - Dependency exist in the queue : Add job to the queue.
+  - Job and dependency doesn't exist in the stack : Add job to the stack and after that add dependency to the stack.
+  - Job doesn't exist in the stack but dependency exist in the stack : Add job before the dependency in the stack.
+  - Job exist in the stack and dependency doesn't : Add dependency to the stack
+  - Job and dependency doesn't exist in the stack : Add job to the stack and after that add dependency to the stack.
 
 Once we have the stack and queue filled, we have to fill the queue with stack value.
 
