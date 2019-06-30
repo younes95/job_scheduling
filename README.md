@@ -1,10 +1,8 @@
 # The Challenge
 
-```
 Imagine we have a list of jobs, each represented by a character. Because certain jobs must be done before others, a job may have a
 dependency on another job. For example, a may depend on b, meaning the final sequence of jobs should place b before a. If a has no
 dependency, the position of a in the final sequence does not matter.
-```
 
 - Given you’re passed an empty string (no jobs), the result should be an empty sequence.
 
@@ -81,7 +79,7 @@ To solve this problem i started to run the example that was given and search for
 The first idea that i had is that there's two cases where we can run a job
 
 - If the job has no dependency
-- If the job's dependency has been already ran
+- If the jobs dependency has been already ran
 
 After that, i see that the job that have dependencies must be stored in a manner that the job comes after the dependency. And there's not a better structure than a stack that can ensure that kind of job (Last job in, first job out ).
 
@@ -117,10 +115,28 @@ The most important part of the problem is how we fill the stack and the queue, s
 * Job has no dependency : Add to the queue
 
 - Job has dependency :
-  ** Dependency exist in the queue : Add job to the queue.
-  ** Job and dependency doesn't exist in the stack : Add job to the stack and after that add dependency to the stack.
-  ** Job doesn't exist in the stack but dependency exist in the stack : Add job before the dependency in the stack.
-  ** Job exist in the stack and dependency doesn't : Add dependency to the stack
-  \*\* Job and dependency doesn't exist in the stack : Add job to the stack and after that add dependency to the stack.
+  -- Dependency exist in the queue : Add job to the queue.
+  -- Job and dependency doesn't exist in the stack : Add job to the stack and after that add dependency to the stack.
+  -- Job doesn't exist in the stack but dependency exist in the stack : Add job before the dependency in the stack.
+  -- Job exist in the stack and dependency doesn't : Add dependency to the stack
+  -- Job and dependency doesn't exist in the stack : Add job to the stack and after that add dependency to the stack.
 
 Once we have the stack and queue filled, we have to fill the queue with stack value.
+
+## Unit testing
+
+To run the test coverage, i used PHPunit and write a JobScheduling class test when i test all the challenge described in "The challenge" section. The challenges are numbered from 0 to 6
+
+## Installation
+
+To install the project just run on the current directory of the project:
+
+```
+composer install
+```
+
+To run test, just execute :
+
+```
+./vendor/bin/phpunit
+```
