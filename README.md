@@ -140,3 +140,19 @@ To run test, just execute :
 ```
 ./vendor/bin/phpunit
 ```
+
+## Commit history
+
+- First commit containing the class of the structures we'll use
+
+- Initial commit
+
+- Merge branch 'master' of https://github.com/younes95/job_scheduling
+
+- Edit md file with the challenge
+
+- Edit md file with Installation
+
+- Add tests and classes implementation
+
+- Edit md file with commit history
